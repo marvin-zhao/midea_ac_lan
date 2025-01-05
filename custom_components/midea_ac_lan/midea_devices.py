@@ -1,14 +1,11 @@
 from homeassistant.const import (
     Platform,
-    TIME_DAYS,
-    TIME_HOURS,
-    TIME_MINUTES,
-    TIME_SECONDS,
-    TEMP_CELSIUS,
-    POWER_WATT,
+    UnitOfTime,
+    UnitOfPower,
+    UnitOfVolume,
+    UnitOfEnergy,
+    UnitOfTemperature,
     PERCENTAGE,
-    VOLUME_LITERS,
-    ENERGY_KILO_WATT_HOUR,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION
 )
@@ -67,7 +64,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             X26Attributes.current_humidity: {
@@ -148,21 +145,21 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Storage Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_HOURS,
+                "unit": UnitOfTime.HOURS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             X34Attributes.temperature: {
                 "type": Platform.SENSOR,
                 "name": "Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             X34Attributes.time_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             X34Attributes.child_lock: {
@@ -213,7 +210,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             X40Attributes.light: {
@@ -294,7 +291,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             A1Attributes.tank: {
@@ -427,35 +424,35 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Indoor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ACAttributes.outdoor_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Outdoor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ACAttributes.total_energy_consumption: {
                 "type": Platform.SENSOR,
                 "name": "Total Energy Consumption",
                 "device_class": SensorDeviceClass.ENERGY,
-                "unit": ENERGY_KILO_WATT_HOUR,
+                "unit": UnitOfEnergy.KILO_WATT_HOUR,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             },
             ACAttributes.current_energy_consumption: {
                 "type": Platform.SENSOR,
                 "name": "Current Energy Consumption",
                 "device_class": SensorDeviceClass.ENERGY,
-                "unit": ENERGY_KILO_WATT_HOUR,
+                "unit": UnitOfEnergy.KILO_WATT_HOUR,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ACAttributes.realtime_power: {
                 "type": Platform.SENSOR,
                 "name": "Realtime Power",
                 "device_class": SensorDeviceClass.POWER,
-                "unit": POWER_WATT,
+                "unit": UnitOfPower.WATT,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -491,7 +488,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B0Attributes.status: {
@@ -503,7 +500,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -539,7 +536,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B1Attributes.status: {
@@ -551,7 +548,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -622,13 +619,13 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Top Compartment Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B3Attributes.top_compartment_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Top Compartment Remaining",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B3Attributes.middle_compartment_status: {
@@ -640,13 +637,13 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Middle Compartment Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B3Attributes.middle_compartment_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Middle Compartment Remaining",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B3Attributes.bottom_compartment_status: {
@@ -658,13 +655,13 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Bottom Compartment Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B3Attributes.bottom_compartment_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Bottom Compartment Remaining",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -700,7 +697,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             B4Attributes.status: {
@@ -712,7 +709,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -786,7 +783,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             BFAttributes.status: {
@@ -798,7 +795,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -845,14 +842,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Water Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             C2Attributes.seat_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Seat Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             C2Attributes.filter_life: {
@@ -994,7 +991,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Tank Actual Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             C3Attributes.status_ibh: {
@@ -1013,21 +1010,21 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Total energy consumption",
                 "device_class": SensorDeviceClass.ENERGY,
-                "unit": ENERGY_KILO_WATT_HOUR,
+                "unit": UnitOfEnergy.KILO_WATT_HOUR,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             },
             C3Attributes.total_produced_energy: {
                 "type": Platform.SENSOR,
                 "name": "Total produced energy",
                 "device_class": SensorDeviceClass.ENERGY,
-                "unit": ENERGY_KILO_WATT_HOUR,
+                "unit": UnitOfEnergy.KILO_WATT_HOUR,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             },
             C3Attributes.outdoor_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Outdoor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
@@ -1087,63 +1084,63 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Flex Zone Actual Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.flex_zone_setting_temp: {
                 "type": Platform.SENSOR,
                 "name": "Flex Zone Setting Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.freezer_actual_temp: {
                 "type": Platform.SENSOR,
                 "name": "Freezer Actual Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.freezer_setting_temp: {
                 "type": Platform.SENSOR,
                 "name": "Freezer Setting Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.energy_consumption: {
                 "type": Platform.SENSOR,
                 "name": "Energy Consumption",
                 "device_class": SensorDeviceClass.ENERGY,
-                "unit": ENERGY_KILO_WATT_HOUR,
+                "unit": UnitOfEnergy.KILO_WATT_HOUR,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             },
             CAAttributes.refrigerator_actual_temp: {
                 "type": Platform.SENSOR,
                 "name": "Refrigerator Actual Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.refrigerator_setting_temp: {
                 "type": Platform.SENSOR,
                 "name": "Refrigerator Setting Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.right_flex_zone_actual_temp: {
                 "type": Platform.SENSOR,
                 "name": "Right Flex Zone Actual Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CAAttributes.right_flex_zone_setting_temp: {
                 "type": Platform.SENSOR,
                 "name": "Right Flex Zone Setting Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         },
@@ -1190,7 +1187,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Indoor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         }
@@ -1213,21 +1210,21 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Compressor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CDAttributes.condenser_temperature:{
                 "type": Platform.SENSOR,
                 "name": "Condenser Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CDAttributes.outdoor_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Outdoor Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CDAttributes.power: {
@@ -1268,7 +1265,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             CEAttributes.co2: {
@@ -1350,7 +1347,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         }
@@ -1362,28 +1359,28 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DAAttributes.wash_time: {
                 "type": Platform.SENSOR,
                 "name": "wash time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DAAttributes.soak_time: {
                 "type": Platform.SENSOR,
                 "name": "soak time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DAAttributes.dehydration_time: {
                 "type": Platform.SENSOR,
                 "name": "dehydration time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DAAttributes.dehydration_speed: {
@@ -1455,7 +1452,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DBAttributes.progress: {
@@ -1482,7 +1479,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             DCAttributes.progress: {
@@ -1544,21 +1541,21 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Storage Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_HOURS,
+                "unit": UnitOfTime.HOURS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E1Attributes.temperature: {
                 "type": Platform.SENSOR,
                 "name": "Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E1Attributes.time_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E1Attributes.child_lock: {
@@ -1627,28 +1624,28 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E2Attributes.heating_time_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Heating Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E2Attributes.heating_power: {
                 "type": Platform.SENSOR,
                 "name": "Heating Power",
                 "device_class": SensorDeviceClass.POWER,
-                "unit": POWER_WATT,
+                "unit": UnitOfPower.WATT,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E2Attributes.water_consumption:{
                 "type": Platform.SENSOR,
                 "name": "Water Consumption",
                 "icon": "mdi:water",
-                "unit": VOLUME_LITERS,
+                "unit": UnitOfVolume.LITERS,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             },
             E2Attributes.power: {
@@ -1692,7 +1689,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E3Attributes.power: {
@@ -1750,14 +1747,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Heating Leaving Water Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E6Attributes.bathing_leaving_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Bathing Leaving Water Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E6Attributes.main_power: {
@@ -1795,35 +1792,35 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E8Attributes.keep_warm_remaining: {
                 "type": Platform.SENSOR,
                 "name": "Keep Warm Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E8Attributes.working_time: {
                 "type": Platform.SENSOR,
                 "name": "Working Time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_SECONDS,
+                "unit": UnitOfTime.SECONDS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E8Attributes.target_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Target Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             E8Attributes.current_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
 
@@ -1848,14 +1845,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Bottom Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EAAttributes.keep_warm_time: {
                 "type": Platform.SENSOR,
                 "name": "Keep Warm Time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EAAttributes.mode: {
@@ -1872,14 +1869,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EAAttributes.top_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Top Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         }
@@ -1903,14 +1900,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Bottom Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ECAttributes.keep_warm_time: {
                 "type": Platform.SENSOR,
                 "name": "Keep Warm Time",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ECAttributes.mode: {
@@ -1927,14 +1924,14 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Time Remaining",
                 "icon": "mdi:progress-clock",
-                "unit": TIME_MINUTES,
+                "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             ECAttributes.top_temperature: {
                 "type": Platform.SENSOR,
                 "name": "Top Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         }
@@ -1955,21 +1952,21 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Filter1 Available Days",
                 "icon": "mdi:air-filter",
-                "unit": TIME_DAYS,
+                "unit": UnitOfTime.DAYS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EDAttributes.filter2: {
                 "type": Platform.SENSOR,
                 "name": "Filter2 Available Days",
                 "icon": "mdi:air-filter",
-                "unit": TIME_DAYS,
+                "unit": UnitOfTime.DAYS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EDAttributes.filter3: {
                 "type": Platform.SENSOR,
                 "name": "Filter3 Available Days",
                 "icon": "mdi:air-filter",
-                "unit": TIME_DAYS,
+                "unit": UnitOfTime.DAYS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
             EDAttributes.life1: {
@@ -2011,7 +2008,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Water Consumption",
                 "icon": "mdi:water-pump",
-                "unit": VOLUME_LITERS,
+                "unit": UnitOfVolume.LITERS,
                 "state_class": SensorStateClass.TOTAL_INCREASING
             }
         }
@@ -2087,7 +2084,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             },
         }
@@ -2226,7 +2223,7 @@ MIDEA_DEVICES = {
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
-                "unit": TEMP_CELSIUS,
+                "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT
             }
         }
